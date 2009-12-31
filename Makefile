@@ -1,10 +1,10 @@
-LIBNET_CONFIG=/usr/pkg/bin/libnet11-config
+LIBNET_CONFIG=libnet-config
 
 GCC=gcc
 RM=/bin/rm
 APP=drench
 LDFLAGS=-L/usr/pkg/lib
-CFLAGS=-I/usr/pkg/include
+CFLAGS=-I/usr/pkg/include -m32
 LIBS=-lpcap -lcrypto
 
 
