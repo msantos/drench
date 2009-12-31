@@ -1,0 +1,45 @@
+
+drench sends out SYN packets to wherever you so desire, then ACK's the
+SYN ACK's and keeps on keeping on ACK'ing all night long, baby.
+
+The result is the poor destination service is overwhelmed with connections
+and crashes, if per address limitations are not in play. And if such
+limitations have wisely been enforced but the service happens to run on
+the local network, drench is happy to spoof a whole bunch of addresses
+to get around it.
+
+
+DEPENDENCIES
+
+libnet, pcap
+
+HOW TO BUILD
+
+cd drench
+make
+
+
+HOW TO RUN
+
+[drench v0.3: Connection flood utility]
+Usage: drench [-h|-i <interface>|-d <address>|-p <port>|-P <payload>|-r <number>|-s <address>|-c <number>|-C|-S <microseconds>|-x <group>]
+-h		usage
+
+-d <address>	destination address
+-p <port>	    port to connection flood
+
+-c <number>	    packet count
+-i <interface>	interface
+-r <number>	    number of ARP'ed fake IP addresses
+-s <address>	source address
+
+-A 		        Respond to received ACK's
+-C 		        Disable check of ISN cookie
+-P <payload>	payload of packet
+-R 		        Repeat packet burst
+-S <microseconds>	microseconds to sleep between sending packets
+-x <group>	    number of packets to send in a group (defaults to value of -r)
+
+[Bug reports to michael.santos@gmail.com]
+
+
